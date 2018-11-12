@@ -100,6 +100,7 @@ This file will run samples to perform logistic regression. It includes:
 - Compute Cost and Gradient
 - Optimizing using fminunc
 - Predict and Accuracies
+
 Here we have data on students being admitted to a program and two test scores. We predict the probability that a student with some scores will get admitted or not. 
 
 Here you can see the test scores and whether a student is admitted or not. Then, we have found a "cut-off line" and based or predicctions on which side of the line a new student will fall, based on their test scores. 
@@ -167,14 +168,16 @@ This file will run samples to perform logistic regression with regularization. I
 - Regularized Logistic Regression
 - Polynomial Features
 - Regularization and Accuracies
+
 Here we perform two tests on a set of microchips and we want to classify the microchips. The data looks like this:
 <img src="sample2_reg_fig1.jpg" width="600" alt="Test scores for microschips and their failure" align="middle">
 
 Then we train a logistic regression algorithm with regulariziation paramter lambda to classify them. The change in lambda clearly shows the sensitivity of the algorithm for over/under fitting. Here are the decision boundaries for a few sample lambdas:
-<img src="sample2_reg_fig2.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig3.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig4.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig5.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+
+<img src="sample2_reg_fig2.jpg" width="30%" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig3.jpg" width="30%" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig4.jpg" width="30%" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig5.jpg" width="30%" alt="Test scores for microschips with decision boundary" align="middle">
 <img src="sample2_reg_fig6.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
 <img src="sample2_reg_fig7.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
 <img src="sample2_reg_fig8.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
