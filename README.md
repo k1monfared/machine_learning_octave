@@ -7,12 +7,19 @@ This file will run samples to perform
 - Plotting Data
 - Conputing Cost and Gradient descent
 - Visualizing J(theta_0, theta_1)
+
 For a given set of points we first plot the data points and then find a linear regression that minimizes the sum of the squares of distances (cost: least square) of the points from the line, using gradient descent. Then we will visulalize the cost function J.
+
 <img src="sample1_fig1.jpg" width="600" alt="Data points and the line of regression" align="middle">
+
 Here is the cost as a function of y-intercept (theta_0) and the slope (theta_1) of the line:
+
 <img src="sample1_fig2.jpg" width="600" alt="Cost Function" align="middle">
+
 And the contour lines with the minimum value found:
+
 <img src="sample1_fig3.jpg" width="600" alt="Contour lines of the cost function" align="middle">
+
 This is the output:
 
     Plotting Data ...
@@ -48,11 +55,12 @@ This file will run samples to perform
 - Feature Normalization
 - Gradient Descent
 - Normal Equations
+
 Here we load a set of data of some features of houses and their prices. First, we will scale the features to normalize them, then run a gradient descent to minimize the cost function. And eventually compute the regression line directly to compare. At the end you can see the estimate for price of a house not in the data set.
 
 Here you can see the cost vs. number of iterations. This is good way to check if our code is working correctly:
-<img src="sample1_multi_fig1.jpg" width="600" alt="Cost vs. Number of iterations" align="middle">
 
+<img src="sample1_multi_fig1.jpg" width="600" alt="Cost vs. Number of iterations" align="middle">
 
 This is the output:
 
@@ -104,9 +112,11 @@ This file will run samples to perform logistic regression. It includes:
 Here we have data on students being admitted to a program and two test scores. We predict the probability that a student with some scores will get admitted or not. 
 
 Here you can see the test scores and whether a student is admitted or not. Then, we have found a "cut-off line" and based or predicctions on which side of the line a new student will fall, based on their test scores. 
+
 <img src="sample2_fig1.jpg" width="600" alt="Cost vs. Number of iterations" align="middle">
 
 Then we predict for a student with scores 45 and 85, an admission probability of 0.776291, with train accuracy: 89%.
+
 <img src="sample2_fig2.jpg" width="600" alt="Prediction for a new student" align="middle">
 
 Here is the output:
@@ -170,16 +180,14 @@ This file will run samples to perform logistic regression with regularization. I
 - Regularization and Accuracies
 
 Here we perform two tests on a set of microchips and we want to classify the microchips. The data looks like this:
+
 <img src="sample2_reg_fig1.jpg" width="600" alt="Test scores for microschips and their failure" align="middle">
 
 Then we train a logistic regression algorithm with regulariziation paramter lambda to classify them. The change in lambda clearly shows the sensitivity of the algorithm for over/under fitting. Here are the decision boundaries for a few sample lambdas:
 
 <img src="sample2_reg_fig2.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle"> <img src="sample2_reg_fig3.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle"> <img src="sample2_reg_fig4.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig5.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig6.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig7.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig8.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig9.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig5.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle"><img src="sample2_reg_fig6.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle"><img src="sample2_reg_fig7.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig8.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle"><img src="sample2_reg_fig9.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
 
 Here is the output for lambda = 1:
 
@@ -226,3 +234,90 @@ Here is the output for lambda = 1:
 
 	Train Accuracy: 83.050847
 	Expected accuracy (with lambda = 1): 83.1 (approx)
+	
+## sample3
+This file will run samples to perform one-vs-all classification to recognize handwritten digits. It includes:
+- Visualizing Data
+- Vectorize Logistic Regression
+- One-vs-All Training
+- Predict for One-Vs-All
+
+Here we have access to MNIST dataset for handwritten digits, and the actual digit they represent. We write a logistic regression model to recognize these digits and perform a test to measure the accuracy of the trained model. The digits look like this:
+
+<img src="sample3_fig1.jpg" width="600" alt="Some handwritten digits from the dataset" align="middle">
+
+And the training reaches 95% accuracy. You can see the recognized digits at the end of the output, below.
+
+Here is the output:
+
+	Loading and Visualizing Data ...
+	Program paused. Press enter to continue.
+
+	Testing lrCostFunction() with regularization
+	Cost: 2.534819
+	Expected cost: 2.534819
+	Gradients:
+	 0.146561 
+	 -0.548558 
+	 0.724722 
+	 1.398003 
+	Expected gradients:
+	 0.146561
+	 -0.548558
+	 0.724722
+	 1.398003
+	Program paused. Press enter to continue.
+
+	Training One-vs-All Logistic Regression...
+	Iteration     1 | Cost: 2.802128e-01
+	Iteration     2 | Cost: 9.454389e-02
+	Iteration     3 | Cost: 5.704641e-02
+	Iteration     4 | Cost: 4.688190e-02
+	[...]
+	Iteration    48 | Cost: 1.006015e-02
+	Iteration    49 | Cost: 9.986643e-03
+	Iteration    50 | Cost: 9.975117e-03
+
+	Program paused. Press enter to continue.
+
+	Training Set Accuracy: 94.960000
+	
+	 2     2     9     2     9     9     7     0     1     2
+     9     8     1     3     7     6     4     5     1     2
+     6     8     6     3     6     8     5     1     2     6
+     2     6     6     0     7     4     4     9     5     9
+     2     6     4     3     1     8     6     5     1     3
+     9     0     1     9     1     5     2     0     7     2
+     9     2     9     0     6     0     0     7     8     6
+     9     8     1     0     7     1     0     3     8     9
+     0     8     9     5     0     1     7     5     2     4
+     9     7     3     7     5     6     5     1     4     8
+	
+
+## sample3_nn
+Here we reach the same goal usinga a pre-initialized neural network. This includes:
+- Visualizing Data
+- Loading Parameters
+- Implementing Predict function
+
+We use the same dataset as in sample3, and train a neural network to recognize the digits. Some of the outputs are shown here. The training accuracy is about 97.5%.
+
+<img src="sample3_nn_fig1.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig2.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig3.jpg" width="270" alt="neural network handwritten digit recognition" align="middle">
+<img src="sample3_nn_fig4.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig5.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig6.jpg" width="270" alt="neural network handwritten digit recognition" align="middle">
+<img src="sample3_nn_fig7.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig8.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig9.jpg" width="270" alt="neural network handwritten digit recognition" align="middle">
+
+Here is the output:
+
+	Loading and Visualizing Data ...
+	Program paused. Press enter to continue.
+
+	Loading Saved Neural Network Parameters ...
+
+	Training Set Accuracy: 97.520000
+	Program paused. Press enter to continue.
+
+	Displaying Example Image
+
+	Neural Network Prediction: 10 (digit 0)
+	Paused - press enter to continue, q to exit:q
+	
