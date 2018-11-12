@@ -17,6 +17,9 @@ function stem = porterStemmer(inString)
 % To call this function, use the string to be stemmed as the input
 % argument.  This function returns the stemmed word as a string.
 
+%
+% Credit: Andrew Ng, Coursera Team
+
 % Lower-case string
 inString = lower(inString);
 

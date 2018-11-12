@@ -6,6 +6,8 @@ function checkCostFunction(lambda)
 %   analytical gradients produced by your code and the numerical gradients 
 %   (computed using computeNumericalGradient). These two gradient 
 %   computations should result in very similar values.
+% 
+% Credit: Keivan Hassani Monfared, k1monfared@gmail.com and Andrew Ng, Coursera Team
 
 % Set lambda
 if ~exist('lambda', 'var') || isempty(lambda)

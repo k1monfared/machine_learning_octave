@@ -1,7 +1,5 @@
-# plotting normal dists
-
+% Credit: Keivan Hassani Monfared, k1monfared@gmail.com and Andrew Ng, Coursera Team
 mu = 0;
-
 for i = -3:2
 	sigma = 2^i;
 	x = -15:0.01*sigma:15;

@@ -7,6 +7,7 @@ function checkNNGradients(lambda)
 %   using computeNumericalGradient). These two gradient computations should
 %   result in very similar values.
 %
+% Credit: Keivan Hassani Monfared, k1monfared@gmail.com and Andrew Ng, Coursera Team
 
 if ~exist('lambda', 'var') || isempty(lambda)
     lambda = 0;
