@@ -246,7 +246,7 @@ Here we have access to MNIST dataset for handwritten digits, and the actual digi
 
 <img src="sample3_fig1.jpg" width="600" alt="Some handwritten digits from the dataset" align="middle">
 
-And the training reaches 95% accuracy. You can see the recognized digits at the end of the output, below.
+And the training reaches 95% accuracy. You can see the recognized digits at the end of the output, below. Can you spot any errors?
 
 Here is the output:
 
@@ -300,7 +300,7 @@ Here we reach the same goal usinga a pre-initialized neural network. This includ
 - Loading Parameters
 - Implementing Predict function
 
-We use the same dataset as in sample3, and train a neural network to recognize the digits. Some of the outputs are shown here. The training accuracy is about 97.5%.
+We use the same dataset as in sample3, and train a neural network to recognize the digits. Some of the outputs are shown here with the recognized digits on top. The training accuracy is about 97.5%.
 
 <img src="sample3_nn_fig1.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig2.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig3.jpg" width="270" alt="neural network handwritten digit recognition" align="middle">
 <img src="sample3_nn_fig4.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig5.jpg" width="270" alt="neural network handwritten digit recognition" align="middle"> <img src="sample3_nn_fig6.jpg" width="270" alt="neural network handwritten digit recognition" align="middle">
@@ -321,3 +321,116 @@ Here is the output:
 	Neural Network Prediction: 10 (digit 0)
 	Paused - press enter to continue, q to exit:q
 	
+# sample4
+Here we train a neural network from scratch to recognize the handwritten digits. This includes:
+- Visualizing Data
+- Compute Cost (Feedforward)
+- Regularization
+- Sigmoid Gradient
+- Initializing Pameters
+- Backpropagation
+- Training the Neural Network
+- Visualizing Weights
+- Predicting
+
+Here is some randomly selected data points:
+
+<img src="sample4_fig1.jpg" width="600" alt="MNIST handwritten digits" align="middle"> 
+
+And here is a visualization of a hidden layer of our neural network:
+
+<img src="sample4_fig2.jpg" width="600" alt="Visualiziation of a hidden layer" align="middle"> 
+
+You can see the recognized digits at the end of the output below. Do you spot any errors?
+
+	Loading and Visualizing Data ...
+	Program paused. Press enter to continue.
+
+	Loading Saved Neural Network Parameters ...
+
+	Feedforward Using Neural Network ...
+	Cost at parameters (loaded from ex4weights): 0.287629 
+	(this value should be about 0.287629)
+
+	Program paused. Press enter to continue.
+
+	Checking Cost Function (w/ Regularization) ... 
+	Cost at parameters (loaded from ex4weights): 0.383770 
+	(this value should be about 0.383770)
+	Program paused. Press enter to continue.
+
+	Evaluating sigmoid gradient...
+	Sigmoid gradient evaluated at [-1 -0.5 0 0.5 1]:
+	  0.196612 0.235004 0.250000 0.235004 0.196612 
+
+	Program paused. Press enter to continue.
+
+	Initializing Neural Network Parameters ...
+
+	Checking Backpropagation... 
+	   -0.0093   -0.0093
+		0.0089    0.0089
+	   [...]
+		0.0532    0.0532
+		0.0466    0.0466
+
+	The above two columns you get should be very similar.
+	(Left-Your Numerical Gradient, Right-Analytical Gradient)
+
+	If your backpropagation implementation is correct, then 
+	the relative difference will be small (less than 1e-9). 
+
+	Relative Difference: 2.37276e-11
+
+	Program paused. Press enter to continue.
+
+	Checking Backpropagation (w/ Regularization) ... 
+	   -0.0093   -0.0093
+		0.0089    0.0089
+	   [...]
+	   -0.0045   -0.0045
+		0.0015    0.0015
+
+	The above two columns you get should be very similar.
+	(Left-Your Numerical Gradient, Right-Analytical Gradient)
+
+	If your backpropagation implementation is correct, then 
+	the relative difference will be small (less than 1e-9). 
+
+	Relative Difference: 2.26976e-11
+
+
+	Cost at (fixed) debugging parameters (w/ lambda = 3.000000): 0.576051 
+	(for lambda = 3, this value should be about 0.576051)
+
+	Program paused. Press enter to continue.
+
+	Training Neural Network... 
+	Iteration     1 | Cost: 3.343740e+00
+	Iteration     2 | Cost: 3.235767e+00
+	[...]
+	Iteration    49 | Cost: 3.323207e-01
+	Iteration    50 | Cost: 3.246657e-01
+
+	Program paused. Press enter to continue.
+
+	Visualizing Neural Network... 
+
+	Program paused. Press enter to continue.
+
+	Training Set Accuracy: 96.320000
+
+	ans =
+
+		 6     8     6     3     5     3     8     2     2     3
+		 7     0     6     1     8     6     4     8     6     1
+		 1     7     1     7     2     6     2     8     0     7
+		 5     0     1     9     1     5     0     4     5     8
+		 7     1     2     4     2     3     2     0     6     6
+		 2     2     6     3     8     2     2     6     1     3
+		 7     4     2     7     4     0     6     0     4     9
+		 8     9     5     9     8     9     5     5     2     2
+		 5     6     3     0     9     1     8     3     0     2
+		 2     2     5     1     6     8     9     5     0     5
+		 
+ 
