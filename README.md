@@ -106,7 +106,7 @@ Here you can see the test scores and whether a student is admitted or not. Then,
 <img src="sample2_fig1.jpg" width="600" alt="Cost vs. Number of iterations" align="middle">
 
 Then we predict for a student with scores 45 and 85, an admission probability of 0.776291, with train accuracy: 89%.
-<img src="sample2_fig2.jpg" width="600" alt="Cost vs. Number of iterations" align="middle">
+<img src="sample2_fig2.jpg" width="600" alt="Prediction for a new student" align="middle">
 
 Here is the output:
 
@@ -161,3 +161,67 @@ Here is the output:
 
 	Train Accuracy: 89.000000
 	Expected accuracy (approx): 89.0
+	
+## sample2_reg
+This file will run samples to perform logistic regression with regularization. It includes:
+- Regularized Logistic Regression
+- Polynomial Features
+- Regularization and Accuracies
+Here we perform two tests on a set of microchips and we want to classify the microchips. The data looks like this:
+<img src="sample2_reg_fig1.jpg" width="600" alt="Test scores for microschips and their failure" align="middle">
+
+Then we train a logistic regression algorithm with regulariziation paramter lambda to classify them. The change in lambda clearly shows the sensitivity of the algorithm for over/under fitting. Here are the decision boundaries for a few sample lambdas:
+<img src="sample2_reg_fig2.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig3.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig4.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig5.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig6.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig7.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig8.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig9.jpg" width="300" alt="Test scores for microschips with decision boundary" align="middle">
+
+Here is the output for lambda = 1:
+
+	Cost at initial theta (zeros): 0.693147
+	Expected cost (approx): 0.693
+	Gradient at initial theta (zeros) - first five values only:
+	 0.008475 
+	 0.018788 
+	 0.000078 
+	 0.050345 
+	 0.011501 
+	Expected gradients (approx) - first five values only:
+	 0.0085
+	 0.0188
+	 0.0001
+	 0.0503
+	 0.0115
+
+	Program paused. Press enter to continue.
+
+	Cost at test theta (with lambda = 10): 3.164509
+	Expected cost (approx): 3.16
+	Gradient at test theta - first five values only:
+	 0.346045 
+	 0.161352 
+	 0.194796 
+	 0.226863 
+	 0.092186 
+	Expected gradients (approx) - first five values only:
+	 0.3460
+	 0.1614
+	 0.1948
+	 0.2269
+	 0.0922
+
+	Program paused. Press enter to continue.
+
+	Local minimum found.
+
+	Optimization completed because the size of the gradient is less than
+	the default value of the optimality tolerance.
+
+	<stopping criteria details>
+
+	Train Accuracy: 83.050847
+	Expected accuracy (with lambda = 1): 83.1 (approx)
