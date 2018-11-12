@@ -174,10 +174,10 @@ Here we perform two tests on a set of microchips and we want to classify the mic
 
 Then we train a logistic regression algorithm with regulariziation paramter lambda to classify them. The change in lambda clearly shows the sensitivity of the algorithm for over/under fitting. Here are the decision boundaries for a few sample lambdas:
 
-<img src="sample2_reg_fig2.jpg" width="270%" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig3.jpg" width="270%" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig4.jpg" width="270%" alt="Test scores for microschips with decision boundary" align="middle">
-<img src="sample2_reg_fig5.jpg" width="270%" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig2.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig3.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig4.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
+<img src="sample2_reg_fig5.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
 <img src="sample2_reg_fig6.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
 <img src="sample2_reg_fig7.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
 <img src="sample2_reg_fig8.jpg" width="270" alt="Test scores for microschips with decision boundary" align="middle">
