@@ -1,21 +1,5 @@
-%% Machine Learning Online Class - Exercise 2: Logistic Regression
+%% Logistic Regression
 %
-%  Instructions
-%  ------------
-% 
-%  This file contains code that helps you get started on the logistic
-%  regression exercise. You will need to complete the following functions 
-%  in this exericse:
-%
-%     sigmoid.m
-%     costFunction.m
-%     predict.m
-%     costFunctionReg.m
-%
-%  For this exercise, you will not need to change any code in this file,
-%  or any other files other than those mentioned above.
-%
-
 %% Initialization
 clear ; close all; clc
 
@@ -27,7 +11,7 @@ data = load('ex2data1.txt');
 X = data(:, [1, 2]); y = data(:, 3);
 
 %% ==================== Part 1: Plotting ====================
-%  We start the exercise by first plotting the data to understand the 
+%  We start by first plotting the data to understand the 
 %  the problem we are working with.
 
 fprintf(['Plotting data with + indicating (y = 1) examples and o ' ...
@@ -50,11 +34,10 @@ pause;
 
 
 %% ============ Part 2: Compute Cost and Gradient ============
-%  In this part of the exercise, you will implement the cost and gradient
-%  for logistic regression. You neeed to complete the code in 
-%  costFunction.m
+%  Implement the cost and gradient
+%  for logistic regression. 
 
-%  Setup the data matrix appropriately, and add ones for the intercept term
+%  Setup the data matrix, and add ones for the intercept term
 [m, n] = size(X);
 
 % Add intercept term to x and X_test
@@ -87,7 +70,7 @@ pause;
 
 
 %% ============= Part 3: Optimizing using fminunc  =============
-%  In this exercise, you will use a built-in function (fminunc) to find the
+%  Use a built-in function (fminunc) to find the
 %  optimal parameters theta.
 
 %  Set options for fminunc
@@ -117,22 +100,19 @@ ylabel('Exam 2 score')
 
 % Specified in plot order
 legend('Admitted', 'Not admitted')
-hold off;
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
 %% ============== Part 4: Predict and Accuracies ==============
-%  After learning the parameters, you'll like to use it to predict the outcomes
-%  on unseen data. In this part, you will use the logistic regression model
+%  After learning the parameters, use it to predict the outcomes
+%  on unseen data. In this part, we use the logistic regression model
 %  to predict the probability that a student with score 45 on exam 1 and 
 %  score 85 on exam 2 will be admitted.
 %
-%  Furthermore, you will compute the training and test set accuracies of 
+%  Furthermore, we will compute the training and test set accuracies of 
 %  our model.
 %
-%  Your task is to complete the code in predict.m
-
 %  Predict probability for a student with score 45 on exam 1 
 %  and score 85 on exam 2 
 
@@ -142,10 +122,11 @@ fprintf(['For a student with scores 45 and 85, we predict an admission ' ...
 fprintf('Expected value: 0.775 +/- 0.002\n\n');
 
 % Compute accuracy on our training set
-p = predict(theta, X);
+p = predict1(theta, X);
 
 fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 fprintf('Expected accuracy (approx): 89.0\n');
 fprintf('\n');
 
-
+plot(45,85,'rx','MarkerSize',10,'LineWidth',2,'DisplayName','New Student')
+hold off;
