@@ -3,12 +3,13 @@ function plotData(X, y)
     %   PLOTDATA(x,y) plots the data points with + for the positive examples
     %   and o for the negative examples. X is assumed to be a Mx2 matrix.
     %
-    % Credit: Andrew Ng, Coursera Team
+    % Credit: Keivan Hassani Mofnared, k1monfared@gmail.com and Andrew Ng, Coursera Team
 
-    % Note: This was slightly modified such that it expects y = 1 or y = 0
+    % NOTE: This was slightly modified such that it expects y = 1 or y = 0
 
     % Find Indices of Positive and Negative Examples
-    pos = find(y == 1); neg = find(y == 0);
+    pos = find(y == 1); 
+    neg = find(y == 0);
 
     % Plot Examples
     plot(X(pos, 1), X(pos, 2), 'k+','LineWidth', 1, 'MarkerSize', 7)
