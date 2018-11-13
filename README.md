@@ -321,7 +321,7 @@ Here is the output:
 	Neural Network Prediction: 10 (digit 0)
 	Paused - press enter to continue, q to exit:q
 	
-# sample4
+## sample4
 Here we train a neural network from scratch to recognize the handwritten digits. This includes:
 - Visualizing Data
 - Compute Cost (Feedforward)
@@ -337,7 +337,7 @@ Here is some randomly selected data points:
 
 <img src="sample4_fig1.jpg" width="600" alt="MNIST handwritten digits" align="middle"> 
 
-And here is a visualization of a hidden layer of our neural network:
+And here is a visualization of a hidden layer of our neural network (Don't ask me!):
 
 <img src="sample4_fig2.jpg" width="600" alt="Visualiziation of a hidden layer" align="middle"> 
 
@@ -433,4 +433,125 @@ You can see the recognized digits at the end of the output below. Do you spot an
 		 5     6     3     0     9     1     8     3     0     2
 		 2     2     5     1     6     8     9     5     0     5
 		 
- 
+## sample5
+Here we train a neural network from scratch to fit a polynomial model. This includes:
+- Visualizing Data
+- Regularized Linear Regression Cost
+- Regularized Linear Regression Gradient
+- Learning Curve for Linear Regression
+- Feature Mapping for Polynomial Regression
+- Learning Curve for Polynomial Regression
+- Validation for Selecting Lambda
+
+In this sample we analyse the bias and variance of our model. We start with a dataset of amount of waterflow out of a dam vs. the change in water levels. First step is to fit a line to the data, and of course it is not a good fit:
+
+<img src="sample5_fig1.jpg" width="600" alt="fitting a line to dam data" align="middle"> 
+
+Then we implement a polynomial model and using validation curves check whether increasing number of examples will make our model better.
+
+<img src="sample5_fig2.jpg" width="600" alt="learning curve for linear regression" align="middle"> 
+
+Next, we fit a polynomial to the data with regularization parameter lambda = 0:
+
+<img src="sample5_fig3.jpg" width="600" alt="learning curve for linear regression" align="middle"> 
+
+And analyse the bias/variance again using the learning curve:
+
+<img src="sample5_fig4.jpg" width="600" alt="learning curve for linear regression" align="middle"> 
+
+Finally, we vary the lambda and check the training error and the cross validation error to choose the best lambda:
+
+<img src="sample5_fig5.jpg" width="600" alt="learning curve for linear regression" align="middle"> 
+
+In this figure, we can see that the best value of lambda is around 3.
+
+And here is the output:
+
+	Loading and Visualizing Data ...
+	Program paused. Press enter to continue.
+	Cost at theta = [1 ; 1]: 303.993192 
+	(this value should be about 303.993192)
+	Program paused. Press enter to continue.
+	Gradient at theta = [1 ; 1]:  [-15.303016; 598.250744] 
+	(this value should be about [-15.303016; 598.250744])
+	Program paused. Press enter to continue.
+	Iteration     1 | Cost: 1.052435e+02
+	Iteration     2 | Cost: 2.237391e+01
+
+	Program paused. Press enter to continue.
+	Iteration     1 | Cost: 2.663868e-01
+	Iteration     2 | Cost: 3.944305e-31
+	[...]
+	Iteration    16 | Cost: 2.431725e+01
+	Iteration    17 | Cost: 2.431725e+01
+
+	Iteration     1 | Cost: 1.052435e+02
+	Iteration     2 | Cost: 2.237391e+01
+
+	# Training Examples	Train Error	Cross Validation Error
+		1		0.000000	205.121096
+		2		0.000000	110.300366
+		3		3.286595	45.010231
+		4		2.842678	48.368911
+		5		13.154049	35.865165
+		6		19.443963	33.829962
+		7		20.098522	31.970986
+		8		18.172859	30.862446
+		9		22.609405	31.135998
+		10		23.261462	28.936207
+		11		24.317250	29.551432
+		12		22.373906	29.433818
+	Program paused. Press enter to continue.
+	Normalized Training Example 1:
+	  1.000000  
+	  -0.362141  
+	  -0.755087  
+	  0.182226  
+	  -0.706190  
+	  0.306618  
+	  -0.590878  
+	  0.344516  
+	  -0.508481  
+
+	Program paused. Press enter to continue.
+	Iteration     1 | Cost: 8.273077e+01
+	Iteration     2 | Cost: 2.687496e+01
+	[...]
+	Iteration   199 | Cost: 1.489243e-01
+	Iteration   200 | Cost: 1.482768e-01
+
+	Polynomial Regression (lambda = 0.000000)
+
+	# Training Examples	Train Error	Cross Validation Error
+		1		0.000000	160.721900
+		2		0.000000	160.121510
+		3		0.000000	61.754825
+		4		0.000000	61.928895
+		5		0.000000	6.601010
+		6		0.000368	10.313829
+		7		0.013763	20.062804
+		8		0.071330	6.432137
+		9		0.116034	8.020411
+		10		0.174462	9.137928
+		11		0.162821	8.138874
+		12		0.148277	17.936337
+	Program paused. Press enter to continue.
+	Iteration     1 | Cost: 8.273077e+01
+	Iteration     2 | Cost: 2.687496e+01
+	[...]
+	Iteration    17 | Cost: 3.337220e+01
+	Iteration    18 | Cost: 3.337220e+01
+
+	lambda		Train Error	Validation Error
+	 0.000000	0.148277	17.936337
+	 0.001000	0.179513	20.422101
+	 0.003000	0.179920	17.690758
+	 0.010000	0.221774	16.888024
+	 0.030000	0.281851	12.828700
+	 0.100000	0.459318	7.587014
+	 0.300000	0.921760	4.636833
+	 1.000000	2.076188	4.260625
+	 3.000000	4.901351	3.822907
+	 10.000000	16.092213	9.945509
+	Program paused. Press enter to continue.
+	
