@@ -730,6 +730,67 @@ Here is the output:
 	(1 indicates spam, 0 indicates not spam)
 
 ## sample7 <a name="sample7"></a> 
+In this sample we implement k-means clustering and then use it to compress an image. This includes:
+- Find Closest Centroids
+- Compute Means
+- K-Means Clustering
+- K-Means Clustering on Pixels
+- Image Compression
+
+First we use a set of 2D points to test out our k-means clustering algorithm. Here we can see the results step-by-step (only 10 steps are shown):
+
+<img src="sample7_fig1.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig2.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig3.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig4.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig5.jpg" width="250" alt="k-mean clustering steps" align="middle"> 
+<img src="sample7_fig6.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig7.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig8.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig9.jpg" width="250" alt="k-mean clustering steps" align="middle"> <img src="sample7_fig10.jpg" width="250" alt="k-mean clustering steps" align="middle"> 
+
+Then we use the algorithm to cluster pixels in a photo that have RGB values close to each other, and use that clustering to compress the image. Here is the result:
+
+<img src="sample7_fig11.jpg" width="600" alt="Using k-means clustering to compress images" align="middle"> 
+
+And here is the output:
+
+	Finding closest centroids.
+
+	Closest centroids for the first 3 examples: 
+	 1 3 2
+	(the closest centroids should be 1, 3, 2 respectively)
+	Program paused. Press enter to continue.
+
+	Computing centroids means.
+
+	Centroids computed after initial finding of closest centroids: 
+	 2.428301 3.157924 
+	 5.813503 2.633656 
+	 7.119387 3.616684 
+
+	(the centroids should be
+	   [ 2.428301 3.157924 ]
+	   [ 5.813503 2.633656 ]
+	   [ 7.119387 3.616684 ]
+
+	Program paused. Press enter to continue.
+
+	Running K-Means clustering on example dataset.
+
+	K-Means iteration 1/10...
+	Press enter to continue.
+	[...]
+	K-Means iteration 10/10...
+	Press enter to continue.
+
+	K-Means Done.
+
+	Program paused. Press enter to continue.
+
+	Running K-Means clustering on pixels from an image.
+
+	K-Means iteration 1/10...
+	[...]
+	K-Means iteration 10/10...
+	Program paused. Press enter to continue.
+
+	Applying K-Means to compress an image.
+
+	Program paused. Press enter to continue.
 
 
 ## sample7_pca <a name="sample7-pca"></a>
