@@ -794,6 +794,103 @@ And here is the output:
 
 
 ## sample7_pca <a name="sample7-pca"></a>
+In this sample we first use the Principal Component Analysis to reduce dimension of data. Then we will use it on an image to reduce its size. This includes:
+- Visualizing Dataset
+- Principal Component Analysis
+- Dimension Reduction
+- Visualizing Face Data
+- PCA on Face Data: Eigenfaces
+- Dimension Reduction for Faces
+- Visualization of Faces after PCA Dimension Reduction
+- PCA for Visualization
+
+We first start with a 2D dataset, and plot its two eigenvectors at their mean. The longer eigenvector shows most of the data is in that direction, so to reduce the dimensionality, we can ignore the direction of the shorter one:
+
+<img src="sample7_pca_fig1.jpg" width="600" alt="eigenvectors of 2D data" align="middle"> 
+ 
+This can be achieved by projecting the points onto the longer eigenvector:
+
+<img src="sample7_pca_fig2.jpg" width="600" alt="Projection of the data" align="middle">
+
+Now this technique can be used to reduce dimension of pictures. For example, consider the following dataset of faces:
+
+<img src="sample7_pca_fig3.jpg" width="600" alt="Some faces" align="middle">
+
+We can compute the eigenvectors (eigenfaces!) of this dataset. Below the top 36 are shown:
+
+<img src="sample7_pca_fig4.jpg" width="600" alt="Some faces" align="middle">
+
+Now we can reduce the dimension of all of the faces in the above by projecting them onto these directions:
+
+<img src="sample7_pca_fig5.jpg" width="600" alt="Some faces" align="middle">
+
+Same method can be applied on any data set. For example the parrot in the previous sample. Here are all the RGB values of its pixels:
+
+<img src="sample7_pca_fig6.jpg" width="600" alt="Some faces" align="middle">
+
+We can reduce the image by projecting them into two dimensions:
+
+<img src="sample7_pca_fig7.jpg" width="600" alt="Some faces" align="middle">
+
+Finally, here is the output:
+	
+	Visualizing example dataset for PCA.
+
+	Program paused. Press enter to continue.
+
+	Running PCA on example dataset.
+
+	Top eigenvector: 
+	 U(:,1) = -0.707107 -0.707107 
+
+	(you should expect to see -0.707107 -0.707107)
+	Program paused. Press enter to continue.
+
+	Dimension reduction on example dataset.
+
+	Projection of the first example: 1.481274
+
+	(this value should be about 1.481274)
+
+	Approximation of the first example: -1.047419 -1.047419
+
+	(this value should be about  -1.047419 -1.047419)
+
+	Program paused. Press enter to continue.
+
+	Loading face dataset.
+
+	Program paused. Press enter to continue.
+
+	Running PCA on face dataset.
+	(this might take a minute or two ...)
+
+	Program paused. Press enter to continue.
+
+	Dimension reduction for face dataset.
+
+	The projected data Z has a size of: 5000 100 
+
+	Program paused. Press enter to continue.
+
+	Visualizing the projected (reduced dimension) faces.
+
+	Program paused. Press enter to continue.
+
+	K-Means iteration 1/10...
+	K-Means iteration 2/10...
+	K-Means iteration 3/10...
+	K-Means iteration 4/10...
+	K-Means iteration 5/10...
+	K-Means iteration 6/10...
+	K-Means iteration 7/10...
+	K-Means iteration 8/10...
+	K-Means iteration 9/10...
+	K-Means iteration 10/10...
+	Program paused. Press enter to continue.
+	Program paused. Press enter to continue.
+
+
 
 
 ## sample8 <a name="sample8"></a>

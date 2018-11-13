@@ -1,30 +1,9 @@
-%% Machine Learning Online Class
-%  Exercise 7 | Principle Component Analysis and K-Means Clustering
+%% Principle Component Analysis and K-Means Clustering
 %
-%  Instructions
-%  ------------
-%
-%  This file contains code that helps you get started on the
-%  exercise. You will need to complete the following functions:
-%
-%     pca.m
-%     projectData.m
-%     recoverData.m
-%     computeCentroids.m
-%     findClosestCentroids.m
-%     kMeansInitCentroids.m
-%
-%  For this exercise, you will not need to change any code in this file,
-%  or any other files other than those mentioned above.
-%
-
 %% Initialization
 clear ; close all; clc
 
-%% ================== Part 1: Load Example Dataset  ===================
-%  We start this exercise by using a small dataset that is easily to
-%  visualize
-%
+%% ================== Part 1: Load and Visualize Dataset  ===================
 fprintf('Visualizing example dataset for PCA.\n\n');
 
 %  The following command loads the dataset. You should now have the 
@@ -40,8 +19,7 @@ pause;
 
 
 %% =============== Part 2: Principal Component Analysis ===============
-%  You should now implement PCA, a dimension reduction technique. You
-%  should complete the code in pca.m
+%  PCA, a dimension reduction technique.
 %
 fprintf('\nRunning PCA on example dataset.\n\n');
 
@@ -69,12 +47,10 @@ pause;
 
 
 %% =================== Part 3: Dimension Reduction ===================
-%  You should now implement the projection step to map the data onto the 
-%  first k eigenvectors. The code will then plot the data in this reduced 
-%  dimensional space.  This will show you what the data looks like when 
-%  using only the corresponding eigenvectors to reconstruct it.
-%
-%  You should complete the code in projectData.m
+%  Projection step to map the data onto the first k eigenvectors. 
+%  Then plot the data in this reduced dimensional space.  This will show 
+%  what the data looks like when using only the corresponding eigenvectors 
+%  to reconstruct it.
 %
 fprintf('\nDimension reduction on example dataset.\n\n');
 
@@ -104,8 +80,7 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 %% =============== Part 4: Loading and Visualizing Face Data =============
-%  We start the exercise by first loading and visualizing the dataset.
-%  The following code will load the dataset into your environment
+%  The following code will load the dataset into environment
 %
 fprintf('\nLoading face dataset.\n\n');
 
@@ -179,19 +154,18 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 
-%% === Part 8(a): Optional (ungraded) Exercise: PCA for Visualization ===
+%% === Part 8(a): PCA for Visualization ===
 %  One useful application of PCA is to use it to visualize high-dimensional
-%  data. In the last K-Means exercise you ran K-Means on 3-dimensional 
+%  data. In the K-Means code we ran K-Means on 3-dimensional 
 %  pixel colors of an image. We first visualize this output in 3D, and then
 %  apply PCA to obtain a visualization in 2D.
 
 close all; close all; clc
 
-% Reload the image from the previous exercise and run K-Means on it
-% For this to work, you need to complete the K-Means assignment first
+% Reload the image from the previous smple and run K-Means on it
 A = double(imread('bird_small.png'));
 
-% If imread does not work for you, you can try instead
+% If imread does not work, try 
 %   load ('bird_small.mat');
 
 A = A / 255;
@@ -217,7 +191,7 @@ title('Pixel dataset plotted in 3D. Color shows centroid memberships');
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% === Part 8(b): Optional (ungraded) Exercise: PCA for Visualization ===
+%% === Part 8(b): PCA for Visualization ===
 % Use PCA to project this cloud to 2D for visualization
 
 % Subtract the mean to use PCA
