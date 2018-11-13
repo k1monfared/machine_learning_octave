@@ -729,7 +729,7 @@ Here is the output:
 	Spam Classification: 1
 	(1 indicates spam, 0 indicates not spam)
 
-## sample7 <a name="sample7"></a>
+## sample7 <a name="sample7"></a> 
 
 
 ## sample7_pca <a name="sample7-pca"></a>
