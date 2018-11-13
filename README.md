@@ -102,7 +102,7 @@ This is the output:
      $293081.464335
 
 
-## sample2
+## sample2 <a name="sample2"></a>
 This file will run samples to perform logistic regression. It includes:
 - Plotting Data
 - Compute Cost and Gradient
