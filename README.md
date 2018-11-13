@@ -2,7 +2,7 @@
 
 [The credit for preparing the exercises goes to Andrew Ng of Stanford University and DeepLearning.ai through the Machine Learning course on Coursera. I have completed the exercises to complete the tasks.]
 
-## sample1
+## sample1 <a name="sample1"></a>
 This file will run samples to perform 
 - Plotting Data
 - Conputing Cost and Gradient descent
@@ -50,7 +50,7 @@ This is the output:
 
 
 
-## sample1_multi
+## sample1_multi <a name="sample1_multi"></a>
 This file will run samples to perform 
 - Feature Normalization
 - Gradient Descent
@@ -102,7 +102,7 @@ This is the output:
      $293081.464335
 
 
-## sample2
+## sample2 <a name="sample2"></a>
 This file will run samples to perform logistic regression. It includes:
 - Plotting Data
 - Compute Cost and Gradient
@@ -173,7 +173,7 @@ Here is the output:
 	Train Accuracy: 89.000000
 	Expected accuracy (approx): 89.0
 	
-## sample2_reg
+## sample2_reg <a name="sample2_reg"></a>
 This file will run samples to perform logistic regression with regularization. It includes:
 - Regularized Logistic Regression
 - Polynomial Features
@@ -235,7 +235,7 @@ Here is the output for lambda = 1:
 	Train Accuracy: 83.050847
 	Expected accuracy (with lambda = 1): 83.1 (approx)
 	
-## sample3
+## sample3 <a name="sample3"></a>
 This file will run samples to perform one-vs-all classification to recognize handwritten digits. It includes:
 - Visualizing Data
 - Vectorize Logistic Regression
@@ -294,7 +294,7 @@ Here is the output:
      9     7     3     7     5     6     5     1     4     8
 	
 
-## sample3_nn
+## sample3_nn <a name="sample3_nn"></a>
 Here we reach the same goal usinga a pre-initialized neural network. This includes:
 - Visualizing Data
 - Loading Parameters
@@ -321,7 +321,7 @@ Here is the output:
 	Neural Network Prediction: 10 (digit 0)
 	Paused - press enter to continue, q to exit:q
 	
-## sample4
+## sample4 <a name="sample4"></a>
 Here we train a neural network from scratch to recognize the handwritten digits. This includes:
 - Visualizing Data
 - Compute Cost (Feedforward)
@@ -433,8 +433,8 @@ You can see the recognized digits at the end of the output below. Do you spot an
 		 5     6     3     0     9     1     8     3     0     2
 		 2     2     5     1     6     8     9     5     0     5
 		 
-## sample5
-Here we train a neural network from scratch to fit a polynomial model. This includes:
+## sample5 <a name="sample5"></a>
+Here we fit a polynomial model to our data. This includes:
 - Visualizing Data
 - Regularized Linear Regression Cost
 - Regularized Linear Regression Gradient
@@ -453,15 +453,15 @@ Then we implement a polynomial model and using validation curves check whether i
 
 Next, we fit a polynomial to the data with regularization parameter lambda = 0:
 
-<img src="sample5_fig3.jpg" width="600" alt="learning curve for linear regression" align="middle"> 
+<img src="sample5_fig3.jpg" width="600" alt="polynomial fit" align="middle"> 
 
 And analyse the bias/variance again using the learning curve:
 
-<img src="sample5_fig4.jpg" width="600" alt="learning curve for linear regression" align="middle"> 
+<img src="sample5_fig4.jpg" width="600" alt="bias/variance analysis on the learning curve" align="middle"> 
 
 Finally, we vary the lambda and check the training error and the cross validation error to choose the best lambda:
 
-<img src="sample5_fig5.jpg" width="600" alt="learning curve for linear regression" align="middle"> 
+<img src="sample5_fig5.jpg" width="600" alt="cross validation and traning errors" align="middle"> 
 
 In this figure, we can see that the best value of lambda is around 3.
 
@@ -555,3 +555,187 @@ And here is the output:
 	 10.000000	16.092213	9.945509
 	Program paused. Press enter to continue.
 	
+## sample6 <a name="sample6"></a>
+We use support vector machines(SVMs) with various 2D datasets. We will demonstrate how to use a Gaussian
+kernel with SVMs. This includes:
+- Visualizing Data
+- Training Linear SVM 
+- Implementing Gaussian Kernel
+- Training SVM with RBF Kernel
+
+The first dataset is 2 dimensional and can be separated by a linear boundary.
+
+<img src="sample6_fig1.jpg" width="600" alt="linear boundary with SVM" align="middle"> 
+
+In this dataset, the positions of the positive examples (indicated with +) and the negative examples (indicated with o) suggest a natural separation indicated by the gap. However, there is an outlier positive example + on the far left at about (0:1; 4:1). We use a parameter C for the SVM in this code. Informally, the C parameter is a positive value that controls the penalty for misclassified training examples. A large C parameter tells the SVM to try to classify all the examples correctly. C plays a role similar to 1/lambda, where lambda is the regularization parameter that we were using for logistic regression. The figure above is with C = 1. A larger C will find a more skewed line that puts all the positive examples on one side of the line.
+
+Next, we use SVMs to do non-linear classification. In particular, we use SVMs with Gaussian kernels on datasets that are not linearly separable.
+
+<img src="sample6_fig2.jpg" width="600" alt="non-linear boundary with SVM" align="middle"> 
+
+Gaussian kernel are a similarity function that measures the distance between a pair of examples, x(i) and x(j). The Gaussian kernel is also parameterized by a bandwidth parameter, sigma, which determines how fast the similarity metric decreases (to 0) as the examples are further apart. The Gassian Kernel is defined as
+
+<img src="sample6_fig3.jpg" width="600" alt="Gaussian Kernel" align="middle"> 
+
+Finally, we use the cross validation set to determine the best C and sigma parameter to use to find a non-linear boundary. The best result is shown here:
+
+<img src="sample6_fig4.jpg" width="600" alt="Gaussian Kernel" align="middle"> 
+
+And here is the output:
+
+	Loading and Visualizing Data ...
+	Program paused. Press enter to continue.
+
+	Training Linear SVM ...
+
+	Training ......................................................................
+	... Done! 
+
+	Program paused. Press enter to continue.
+
+	Evaluating the Gaussian Kernel ...
+	Gaussian Kernel between x1 = [1; 2; 1], x2 = [0; 4; -1], sigma = 2.000000 :
+		0.324652
+	(for sigma = 2, this value should be about 0.324652)
+	Program paused. Press enter to continue.
+	Loading and Visualizing Data ...
+	Program paused. Press enter to continue.
+
+	Training SVM with RBF Kernel (this may take 1 to 2 minutes) ...
+
+	Training ......................................................................
+	[...]
+	... Done! 
+
+	Program paused. Press enter to continue.
+	Loading and Visualizing Data ...
+	Program paused. Press enter to continue.
+
+	Training ......... Done! 
+
+
+	Training ......................................................................
+	[...]
+	...................... Done! 
+
+	Program paused. Press enter to continue.
+	
+	
+## sample6_spam <a name="sample6_spam"></a>
+Here we will use the support vector machines created above to build a spam classifier. We first convert each
+email into a feature vector x in R^n. This includes:
+- Email Preprocessing
+- Feature Extraction
+- Training Linear SVM for Spam Classification
+- Testing Spam Classification
+- Identifying top Predictors of Spam (check this out in the output, below)
+- Trying our Own Emails
+
+The method employed here in processing emails is to normalize dollar values and URLs, so that all URLs are treated the same, all numbers are treated the same, etc. For example, we replace each URL in the email with the unique string `httpaddr` to indicate that a URL was present. This has the effect of letting the spam classifier make a classification decision based on whether any URL was present, rather than whether a specific URL was present. This typically improves the performance of a spam classifier, since spammers often randomize the URLs, and thus the odds of seeing any particular URL again in a new piece of spam is very small.
+
+The code `processEmail.m` does the following preprocessings:
+- Lower-casing
+- Stripping HTML
+- Normalizing URLs
+- Normalizing Email Addresses
+- Normalizing Numbers
+- Normalizing Dollars
+- Word Stemming
+- Removal of non-words
+
+Here is the output:
+
+	Preprocessing sample email (emailSample1.txt)
+
+	==== Processed Email ====
+
+	anyon know how much it cost to host a web portal well it depend on how mani 
+	visitor you re expect thi can be anywher from less than number buck a month 
+	to a coupl of dollarnumb you should checkout httpaddr or perhap amazon ecnumb 
+	if your run someth big to unsubscrib yourself from thi mail list send an 
+	email to emailaddr 
+
+	=========================
+	Word Indices: 
+	 86 916 794 1077 883 370 1699 790 1822 1831 883 431 1171 794 1002 1893 1364 592 1676 238 162 89 688 945 1663 1120 1062 1699 375 1162 479 1893 1510 799 1182 1237 810 1895 1440 1547 181 1699 1758 1896 688 1676 992 961 1477 71 530 1699 531
+
+	Program paused. Press enter to continue.
+
+	Extracting features from sample email (emailSample1.txt)
+
+	==== Processed Email ====
+
+	anyon know how much it cost to host a web portal well it depend on how mani 
+	visitor you re expect thi can be anywher from less than number buck a month 
+	to a coupl of dollarnumb you should checkout httpaddr or perhap amazon ecnumb 
+	if your run someth big to unsubscrib yourself from thi mail list send an 
+	email to emailaddr 
+
+	=========================
+	Length of feature vector: 1899
+	Number of non-zero entries: 45
+	Program paused. Press enter to continue.
+
+	Training Linear SVM (Spam Classification)
+	(this may take 1 to 2 minutes) ...
+
+	Training ......................................................................
+	...............................................................................
+	...............................................................................
+	................................................................... Done! 
+
+	Training Accuracy: 99.850000
+
+	Evaluating the trained Linear SVM on a test set ...
+	Test Accuracy: 98.900000
+
+	Top predictors of spam: 
+	 our             (0.505201) 
+	 click           (0.465314) 
+	 remov           (0.418803) 
+	 guarante        (0.384257) 
+	 visit           (0.369447) 
+	 basenumb        (0.349145) 
+	 dollar          (0.334123) 
+	 will            (0.271586) 
+	 price           (0.266497) 
+	 pleas           (0.262485) 
+	 most            (0.258954) 
+	 lo              (0.256912) 
+	 nbsp            (0.248506) 
+	 ga              (0.247400) 
+	 da              (0.239843) 
+
+
+
+	Program paused. Press enter to continue.
+
+	==== Processed Email ====
+
+	do you want to make dollarnumb or more per week if you ar a motiv and qualifi 
+	individu i will person demonstr to you a system that will make you dollarnumb 
+	number per week or more thi is not mlm call our number hour pre record number 
+	to get the detail number number number i need peopl who want to make seriou 
+	monei make the call and get the fact invest number minut in yourself now 
+	number number number look forward to your call and i will introduc you to 
+	peopl like yourself who ar current make dollarnumb number plu per week number 
+	number number numberljgvnumb numberleannumberlrmsnumb 
+	numberwxhonumberqiytnumb numberrjuvnumberhqcfnumb numbereidbnumberdmtvlnumb 
+
+	=========================
+
+	Processed spamSample1.txt
+
+	Spam Classification: 1
+	(1 indicates spam, 0 indicates not spam)
+
+## sample7 <a name="sample7"></a>
+
+
+## sample7_pca <a name="sample7-pca"></a>
+
+
+## sample8 <a name="sample8"></a>
+
+
+## sample8_cofi <a name="sample8_cofi"></a>
