@@ -1,12 +1,34 @@
 # Machine Learning with Octave/Matlab
 
+## Contents:
+- [sample1](#smple1)
+	- Linear refression
+	- Gradient descent
+	- Minimizing cost function
+- [sample1_multi](#sample1_multi)
+	- 
+- [sample2](#sample2)
+- [sample2_reg](#sample2_reg)
+- [sample3](#sample3)
+- [sample3_nn](#sample3_nn)
+- [sample4](#sample4)
+- [sample5](#sample5)
+- [sample6](#sample6)
+- [sample6_spam](#sample6_spam)
+- [sample7](#sample7)
+- [sample7_pca](#sample7_pca)
+- [sample8](#sample8)
+- [sample8_cofi](#sample8_cofi)
+
+
+
 [The credit for preparing the exercises goes to Andrew Ng of Stanford University and DeepLearning.ai through the Machine Learning course on Coursera. I have completed the exercises to complete the tasks.]
 
 ## sample1 <a name="sample1"></a>
-This file will run samples to perform 
+In this sample we perform a linear regression by minimizing the cost function. It includes:
 - Plotting Data
-- Conputing Cost and Gradient descent
-- Visualizing J(theta_0, theta_1)
+- Computing Cost and Gradient descent
+- Visualizing Cost Function
 
 For a given set of points we first plot the data points and then find a linear regression that minimizes the sum of the squares of distances (cost: least square) of the points from the line, using gradient descent. Then we will visulalize the cost function J.
 
@@ -938,7 +960,7 @@ Here is the dataset:
 
 <img src="sample8_cofi_fig1.jpg" width="900" alt="Movie Ratings" align="middle">
 
-After learning the data, we input some ratings for a new user, and get recommendations for this new user. In particular, this users ratings are:
+After learning the data, we input some ratings for a new user, and get recommendations for this new user. In particular, this user's ratings are:
 
 	Rated 4 for Toy Story (1995)
 	Rated 3 for Twelve Monkeys (1995)
