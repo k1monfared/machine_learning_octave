@@ -1,7 +1,7 @@
 # Machine Learning with Octave/Matlab
 
 ## Contents:
-- [sample1](#smple1)
+- [sample1](#sample1)
 	- Linear Regression
 	- Gradient Descent
 	- Minimizing Cost Function
@@ -887,7 +887,7 @@ And here is the output:
 	Program paused. Press enter to continue.
 
 
-## sample7_pca <a name="sample7-pca"></a>
+## sample7_pca <a name="sample7_pca"></a>
 In this sample we first use the Principal Component Analysis to reduce dimension of data. Then we will use it on an image to reduce its size. This includes:
 - Visualizing Dataset
 - Principal Component Analysis
