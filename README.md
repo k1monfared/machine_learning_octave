@@ -830,7 +830,7 @@ Same method can be applied on any data set. For example the parrot in the previo
 
 We can reduce the image by projecting them into two dimensions:
 
-<img src="sample7_pca_fig7.jpg" width="600" alt="Some faces" align="middle">
+<img src="sample7_pca_fig7.jpg" width="900" alt="Some faces" align="middle">
 
 Finally, here is the output:
 	
@@ -890,10 +890,181 @@ Finally, here is the output:
 	Program paused. Press enter to continue.
 	Program paused. Press enter to continue.
 
-
-
-
 ## sample8 <a name="sample8"></a>
+In this sample we implement anomaly detection algorithms and collaborative filtering. It includes:
+- Estimateing the dataset statistics
+- Finding Outliers
+- Multidimensional Outliers
 
+The first dataset includes two network server statistics across several machines: the latency and throughput of each machine. With anomaly detection, we find possibly faulty (or very fast) machines.
+
+Assuming a Gaussian distribution for our dataset, we first estimate the parameters the distribution, then compute the probabilities for each of the points and then visualize both the overall distribution and where each of the points falls in terms of that distribution.
+
+Then we find a good epsilon threshold using a cross-validation set probabilities given the estimated Gaussian distribution.
+
+<img src="sample8_fig1.jpg" width="600" alt="Some faces" align="middle">
+
+Finally, we apply this to a harder problem in which more features describe each datapoint and only some features indicate whether a point is an outlier. In this dataset, each example is described by 11 features, capturing many more properties of the servers. At the end epsilon is about 1.38e-18, and 117 anomalies are found.
+
+Here is the output:
+
+	Visualizing example dataset for outlier detection.
+
+	Program paused. Press enter to continue.
+	Visualizing Gaussian fit.
+
+	Program paused. Press enter to continue.
+	Best epsilon found using cross-validation: 8.990853e-05
+	Best F1 on Cross Validation Set:  0.875000
+	   (you should see a value epsilon of about 8.99e-05)
+	   (you should see a Best F1 value of  0.875000)
+
+	Program paused. Press enter to continue.
+	Best epsilon found using cross-validation: 1.377229e-18
+	Best F1 on Cross Validation Set:  0.615385
+	   (you should see a value epsilon of about 1.38e-18)
+	   (you should see a Best F1 value of 0.615385)
+	# Outliers found: 117
 
 ## sample8_cofi <a name="sample8_cofi"></a>
+We implement the collaborative filtering learning algorithm and apply it to a dataset of movie ratings ([MovieLens 100k Dataset](www.grouplens.org/node/73/) from GroupLens Research). This includes:
+- Visualizing Movie Ratings Dataset
+- Collaborative Filtering Cost, Gradient, and their Regularization
+- Entering ratings for a new user
+- Learning Movie Ratings
+- Recommendation
+
+Here is the dataset:
+
+<img src="sample8_fig7.jpg" width="900" alt="Movie Ratings" align="middle">
+
+After learning the data, we input some ratings for a new user, and get recommendations for this new user. In particular, this users ratings are:
+
+	Rated 4 for Toy Story (1995)
+	Rated 3 for Twelve Monkeys (1995)
+	Rated 5 for Usual Suspects, The (1995)
+	Rated 4 for Outbreak (1995)
+	Rated 5 for Shawshank Redemption, The (1994)
+	Rated 3 for While You Were Sleeping (1995)
+	Rated 5 for Forrest Gump (1994)
+	Rated 2 for Silence of the Lambs, The (1991)
+	Rated 4 for Alien (1979)
+	Rated 5 for Die Hard 2 (1990)
+	Rated 5 for Sphere (1998)
+	
+And the recommended movies are:
+
+	Predicting rating 5.0 for movie Star Kid (1997)
+	Predicting rating 5.0 for movie Entertaining Angels: The Dorothy Day Story (1996)
+	Predicting rating 5.0 for movie Saint of Fort Washington, The (1993)
+	Predicting rating 5.0 for movie Santa with Muscles (1996)
+	Predicting rating 5.0 for movie Aiqing wansui (1994)
+	Predicting rating 5.0 for movie Someone Else's America (1995)
+	Predicting rating 5.0 for movie They Made Me a Criminal (1939)
+	Predicting rating 5.0 for movie Marlene Dietrich: Shadow and Light (1996)
+	Predicting rating 5.0 for movie Prefontaine (1997)
+	Predicting rating 5.0 for movie Great Day in Harlem, A (1994)
+
+Here is the entire output:
+
+	Loading movie ratings dataset.
+
+	Average rating for movie 1 (Toy Story): 3.878319 / 5
+
+
+	Program paused. Press enter to continue.
+	Cost at loaded parameters: 22.224604 
+	(this value should be about 22.22)
+
+	Program paused. Press enter to continue.
+
+	Checking Gradients (without regularization) ... 
+		3.6197    3.6197
+		0.1469    0.1469
+		[...]
+	   -0.0492   -0.0492
+	   -0.6688   -0.6688
+
+	The above two columns you get should be very similar.
+	(Left-Your Numerical Gradient, Right-Analytical Gradient)
+
+	If your cost function implementation is correct, then 
+	the relative difference will be small (less than 1e-9). 
+
+	Relative Difference: 1.38953e-12
+
+	Program paused. Press enter to continue.
+	Cost at loaded parameters (lambda = 1.5): 31.344056 
+	(this value should be about 31.34)
+
+	Program paused. Press enter to continue.
+
+	Checking Gradients (with regularization) ... 
+	   -1.4498   -1.4498
+	   -7.0030   -7.0030
+	   [...]
+	   -1.1692   -1.1692
+	   -0.7188   -0.7188
+
+	The above two columns you get should be very similar.
+	(Left-Your Numerical Gradient, Right-Analytical Gradient)
+
+	If your cost function implementation is correct, then 
+	the relative difference will be small (less than 1e-9). 
+
+	Relative Difference: 1.57464e-12
+
+	Program paused. Press enter to continue.
+
+
+	New user ratings:
+	Rated 4 for Toy Story (1995)
+	Rated 3 for Twelve Monkeys (1995)
+	Rated 5 for Usual Suspects, The (1995)
+	Rated 4 for Outbreak (1995)
+	Rated 5 for Shawshank Redemption, The (1994)
+	Rated 3 for While You Were Sleeping (1995)
+	Rated 5 for Forrest Gump (1994)
+	Rated 2 for Silence of the Lambs, The (1991)
+	Rated 4 for Alien (1979)
+	Rated 5 for Die Hard 2 (1990)
+	Rated 5 for Sphere (1998)
+
+	Program paused. Press enter to continue.
+
+	Training collaborative filtering...
+	Iteration     1 | Cost: 3.506540e+05
+	Iteration     2 | Cost: 1.368312e+05
+	[...]
+	Iteration    99 | Cost: 3.896747e+04
+	Iteration   100 | Cost: 3.896736e+04
+
+	Recommender system learning completed.
+
+	Program paused. Press enter to continue.
+
+	Top recommendations for you:
+	Predicting rating 5.0 for movie Star Kid (1997)
+	Predicting rating 5.0 for movie Entertaining Angels: The Dorothy Day Story (1996)
+	Predicting rating 5.0 for movie Saint of Fort Washington, The (1993)
+	Predicting rating 5.0 for movie Santa with Muscles (1996)
+	Predicting rating 5.0 for movie Aiqing wansui (1994)
+	Predicting rating 5.0 for movie Someone Else's America (1995)
+	Predicting rating 5.0 for movie They Made Me a Criminal (1939)
+	Predicting rating 5.0 for movie Marlene Dietrich: Shadow and Light (1996)
+	Predicting rating 5.0 for movie Prefontaine (1997)
+	Predicting rating 5.0 for movie Great Day in Harlem, A (1994)
+
+
+	Original ratings provided:
+	Rated 4 for Toy Story (1995)
+	Rated 3 for Twelve Monkeys (1995)
+	Rated 5 for Usual Suspects, The (1995)
+	Rated 4 for Outbreak (1995)
+	Rated 5 for Shawshank Redemption, The (1994)
+	Rated 3 for While You Were Sleeping (1995)
+	Rated 5 for Forrest Gump (1994)
+	Rated 2 for Silence of the Lambs, The (1991)
+	Rated 4 for Alien (1979)
+	Rated 5 for Die Hard 2 (1990)
+	Rated 5 for Sphere (1998)

@@ -15,6 +15,7 @@ function visualizeFit(X, mu, sigma2)
     % Do not plot if there are infinities
     if (sum(isinf(Z)) == 0)
         contour(X1, X2, Z, 10.^(-20:3:0)');
+        colormap('jet')
     end
     hold off;
 end
