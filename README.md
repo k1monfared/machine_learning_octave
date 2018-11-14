@@ -2,25 +2,97 @@
 
 ## Contents:
 - [sample1](#smple1)
-	- Linear refression
-	- Gradient descent
-	- Minimizing cost function
+	- Linear Regression
+	- Gradient Descent
+	- Minimizing Cost Function
 - [sample1_multi](#sample1_multi)
-	- 
+	- Feature Normalization
+    - Gradient Descent
+    - Normal Equations
 - [sample2](#sample2)
+	- Logistic Regression
+    - Plotting Data
+    - Compute Cost and Gradient
+    - Optimizing using fminunc
+    - Predict and Accuracies
 - [sample2_reg](#sample2_reg)
+	- Regularized Logistic Regression
+    - Polynomial Features
+    - Regularization and Accuracies
 - [sample3](#sample3)
+	- One-vs-all Classification
+	- Visualizing Data
+    - Vectorize Logistic Regression
+    - One-vs-All Training
+    - Predict for One-Vs-All
 - [sample3_nn](#sample3_nn)
+	- Preloaded Neural Network - Handwriting recognition
+	- Visualizing Data
+    - Loading Parameters
+    - Implementing Predict function
 - [sample4](#sample4)
+	- Neural Networks From Scratch
+    - Visualizing Data
+    - Compute Cost (Feedforward)
+    - Regularization
+    - Sigmoid Gradient
+    - Initializing Pameters
+    - Backpropagation
+    - Training the Neural Network
+    - Visualizing Weights
+    - Predicting
 - [sample5](#sample5)
+	- Polynomial fitting and Learning Curves
+    - Visualizing Data
+    - Regularized Linear Regression Cost
+    - Regularized Linear Regression Gradient
+    - Learning Curve for Linear Regression
+    - Feature Mapping for Polynomial Regression
+    - Learning Curve for Polynomial Regression
+    - Validation for Selecting Lambda
 - [sample6](#sample6)
+	- Support Vector Machines
+    - Visualizing Data
+    - Training Linear SVM
+    - Implementing Gaussian Kernel
+    - Training SVM with RBF Kernel
 - [sample6_spam](#sample6_spam)
+	- Spam Classifier
+    - Email Preprocessing
+    - Feature Extraction
+    - Training Linear SVM for Spam Classification
+    - Testing Spam Classification
+    - Identifying top Predictors of Spam (check this out in the output, below)
+    - Trying our Own Emails
 - [sample7](#sample7)
+	- K-means Custering and Image Compression
+    - Find Closest Centroids
+    - Compute Means
+    - K-Means Clustering
+    - K-Means Clustering on Pixels
+    - Image Compression
 - [sample7_pca](#sample7_pca)
+	- Principal Component Analysis and Dimensionality Reduction
+    - Visualizing Dataset
+    - Principal Component Analysis
+    - Dimension Reduction
+    - Visualizing Face Data
+    - PCA on Face Data: Eigenfaces
+    - Dimension Reduction for Faces
+    - Visualization of Faces after PCA Dimension Reduction
+    - PCA for Visualization
 - [sample8](#sample8)
+	- Anomaly Detection
+    - Estimateing the dataset statistics
+    - Finding Outliers
+    - Multidimensional Outliers
 - [sample8_cofi](#sample8_cofi)
-
-
+	- Collaborative Filtering and Recommender Sytstems
+    - Visualizing Movie Ratings Dataset
+    - Collaborative Filtering Cost, Gradient, and their Regularization
+    - Entering ratings for a new user
+    - Learning Movie Ratings
+    - Recommendation
 
 [The credit for preparing the exercises goes to Andrew Ng of Stanford University and DeepLearning.ai through the Machine Learning course on Coursera. I have completed the exercises to complete the tasks.]
 
@@ -73,7 +145,7 @@ This is the output:
 
 
 ## sample1_multi <a name="sample1_multi"></a>
-This file will run samples to perform 
+This file will run samples to estimate the price of a house based on some features. It includes
 - Feature Normalization
 - Gradient Descent
 - Normal Equations
