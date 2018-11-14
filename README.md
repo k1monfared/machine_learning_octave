@@ -830,7 +830,7 @@ Same method can be applied on any data set. For example the parrot in the previo
 
 We can reduce the image by projecting them into two dimensions:
 
-<img src="sample7_pca_fig7.jpg" width="900" alt="Some faces" align="middle">
+<img src="sample7_pca_fig7.jpg" width="600" alt="Some faces" align="middle">
 
 Finally, here is the output:
 	
@@ -936,7 +936,7 @@ We implement the collaborative filtering learning algorithm and apply it to a da
 
 Here is the dataset:
 
-<img src="sample8_fig7.jpg" width="900" alt="Movie Ratings" align="middle">
+<img src="sample8_cofi_fig1.jpg" width="900" alt="Movie Ratings" align="middle">
 
 After learning the data, we input some ratings for a new user, and get recommendations for this new user. In particular, this users ratings are:
 
